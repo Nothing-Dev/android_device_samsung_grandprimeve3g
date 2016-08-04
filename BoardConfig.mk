@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Inherit from the proprietary version
--include vendor/samsung/core33g/BoardConfigVendor.mk
+-include vendor/samsung/grandprimeve3g/BoardConfigVendor.mk
 
 # Platform
 TARGET_ARCH := arm
@@ -25,7 +25,7 @@ TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := cortex-a7
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
-TARGET_BOOTLOADER_BOARD_NAME := sc7730s
+TARGET_BOOTLOADER_BOARD_NAME := SC7730SE
 TARGET_GLOBAL_CFLAGS += -mtune=cortex-a7 -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a7 -mfpu=neon -mfloat-abi=softfp
 BOARD_VENDOR := samsung
@@ -46,18 +46,18 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8
 BOARD_KERNEL_PAGESIZE := 2048
-TARGET_KERNEL_CONFIG := cyanogen_core33g_defconfig
-TARGET_KERNEL_SOURCE := kernel/samsung/core33g
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt device/samsung/core33g/dt.img
+TARGET_KERNEL_CONFIG := cyanogen_grandprimeve3g_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/grandprimeve3g
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 
 # RIL
-BOARD_RIL_CLASS := ../../../device/samsung/core33g/ril
+BOARD_RIL_CLASS := ../../../device/samsung/grandprimeve3g/ril
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/core33g/bluetooth
-BOARD_BLUEDROID_VENDOR_CONF := device/samsung/core33g/bluetooth/libbt_vndcfg.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/grandprimeve3g/bluetooth
+BOARD_BLUEDROID_VENDOR_CONF := device/samsung/grandprimeve3g/bluetooth/libbt_vndcfg.txt
 
 # Wifi
 BOARD_WLAN_DEVICE := bcmdhd
@@ -76,7 +76,7 @@ WIFI_BAND := 802_11_ABG
 BOARD_HAVE_SAMSUNG_WIFI := true
 
 # Hardware rendering
-BOARD_EGL_CFG := device/samsung/core33g/configs/egl.cfg
+BOARD_EGL_CFG := device/samsung/grandprimeve3g/configs/egl.cfg
 BOARD_USE_MHEAP_SCREENSHOT := true
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
@@ -91,8 +91,8 @@ COMMON_GLOBAL_CFLAGS += -DSC8830_HWC
 EXTENDED_FONT_FOOTPRINT := true
 
 # Resolution
-TARGET_SCREEN_HEIGHT := 800
-TARGET_SCREEN_WIDTH := 480
+TARGET_SCREEN_WIDTH := 540
+TARGET_SCREEN_HEIGHT := 960
 
 # Audio
 BOARD_USES_TINYALSA_AUDIO := true
@@ -109,7 +109,7 @@ BOARD_NEEDS_MEMORYHEAPION_SPRD := true
 COMMON_GLOBAL_CFLAGS += -DSPRD_HARDWARE
 
 # healthd
-BOARD_HAL_STATIC_LIBRARIES := libhealthd-core33g.sc8830
+BOARD_HAL_STATIC_LIBRARIES := libhealthd-grandprimeve3g.sc8830
 
 # Use the CM PowerHAL
 TARGET_USES_CM_POWERHAL := true
@@ -126,37 +126,13 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := SM-G360H,SM-G360HU,core33g,core33gdd,core33gdx
-
-# SELinux
-#BOARD_SEPOLICY_DIRS += device/samsung/core33g/sepolicy
-#BOARD_SEPOLICY_UNION :=	\
-#	file.te	\
-#	file_contexts \
-#	seapp_contexts \
-#	theme.te \
-#	healthd.te \
-#	init.te \
-#	init_shell.te \
-#	installd.te \
-#	netd.te \
-#	shell.te \
-#	system.te \
-#	untrusted_app.te \
-#	vold.te	\
-#	zygote.te
+TARGET_OTA_ASSERT_DEVICE := grandprimeve3g
 
 # Use dmalloc() for such low memory devices like us
 MALLOC_IMPL := dlmalloc
 
 # Use prebuilt webviewchromium to cut down build time
 PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes
-
-# Enable dex-preoptimization to speed up the first boot sequence
-WITH_DEXPREOPT := true
-#WITH_DEXPREOPT_BOOT_IMG_ONLY := true
-WITH_DEXPREOPT_PIC := true
-WITH_DEXPREOPT_COMP := false
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
@@ -166,7 +142,7 @@ BACKLIGHT_PATH := /sys/class/backlight/panel/brightness
 
 
 # CMHW
-BOARD_HARDWARE_CLASS := device/samsung/core33g/cmhw/
+BOARD_HARDWARE_CLASS := device/samsung/grandprimeve3g/cmhw/
 
 # TWRP
 ##RECOVERY_VARIANT := twrp
@@ -183,8 +159,8 @@ TW_FLASH_FROM_STORAGE := true
 TW_NO_REBOOT_BOOTLOADER := true
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/platform/sec-thermistor/temperature"
 TWHAVE_SELINUX := true
-TARGET_RECOVERY_INITRC := device/samsung/core33g/etc/init.rc
-TARGET_RECOVERY_FSTAB := device/samsung/core33g/ramdisk/recovery.fstab
+TARGET_RECOVERY_INITRC := device/samsung/grandprimeve3g/etc/init.rc
+TARGET_RECOVERY_FSTAB := device/samsung/grandprimeve3g/ramdisk/recovery.fstab
 TW_HAS_DOWNLOAD_MODE := true
 DEVICE_RESOLUTION := 480x800
 TW_THEME := portrait_mdpi
