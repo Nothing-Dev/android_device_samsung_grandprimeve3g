@@ -14,7 +14,10 @@ LOCAL_C_INCLUDES := \
 	frameworks/native/include/media/hardware \
 	$(LOCAL_PATH)/../../../../../gralloc \
 	$(LOCAL_PATH)/../../../../../libstagefrighthw/include \
-	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include/video 
+	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include/video
+
+LOCAL_ADDITIONAL_DEPENDENCIES += \
+	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr 
 
 LOCAL_CFLAGS := -DOSCL_EXPORT_REF= -DOSCL_IMPORT_REF=
 
