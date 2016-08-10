@@ -1,4 +1,3 @@
-# apm/Android.mk
 #
 # Copyright 2012 Spreadtrum
 #
@@ -15,7 +14,7 @@ LOCAL_CFLAGS := \
 LOCAL_SRC_FILES := \
 	AudioPolicyManagerSPRD.cpp
 
-LOCAL_MODULE := \
+LOCAL_STATIC_LIBRARIES := \
 	libmedia_helper
 
 LOCAL_WHOLE_STATIC_LIBRARIES += \
@@ -30,9 +29,7 @@ LOCAL_SHARED_LIBRARIES := \
 LOCAL_C_INCLUDES += \
 	frameworks/av/services/volumemanager
 
-LOCAL_MODULE := \
-	libaudiopolicy
-
+LOCAL_MODULE := libaudiopolicy
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)

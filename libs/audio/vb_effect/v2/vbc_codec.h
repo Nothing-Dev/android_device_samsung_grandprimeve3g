@@ -18,7 +18,8 @@
 
 #define LOG_TAG  "vbc_effect"
 
-//#include <asm/io.h>
+
+/* #include <asm/io.h> */
 #include <cutils/log.h>
 
 

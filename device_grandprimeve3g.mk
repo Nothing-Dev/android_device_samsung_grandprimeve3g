@@ -49,7 +49,10 @@ PRODUCT_PACKAGES += \
 
 # HWC
 PRODUCT_PACKAGES += \
-	libion
+	gralloc.sc8830 \
+	hwcomposer.sc8830 \
+	sprd_gsp.sc8830 \
+	libion_sprd
 
 # Codecs
 PRODUCT_PACKAGES += \
@@ -77,13 +80,13 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
+	audio.primary.sc8830 \
+	audio_policy.sc8830 \
 	audio.r_submix.default \
 	audio.usb.default \
 	libaudio-resampler \
-	libtinyalsa \
-	audio.primary.sc8830 \
-	audio_policy.sc8830 \
-	audio_vbc_eq
+	libatchannel_wrapper \
+	libtinyalsa
 
 # Use prebuilt webviewchromium
 PRODUCT_PACKAGES += \

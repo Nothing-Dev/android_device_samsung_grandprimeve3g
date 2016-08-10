@@ -1,3 +1,4 @@
+#
 # Copyright (C) 2016 The Android Open Source Project
 # Copyright (C) 2016 The CyanogenMod Project
 #
@@ -13,7 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
@@ -23,7 +23,7 @@ LOCAL_CFLAGS := \
 	-Wno-multichar \
 	-g
 
-ifneq (,$(filter sc8830,$(TARGET_BOARD_PLATFORM)))
+ifneq (,$(filter sc8830 scx15,$(TARGET_BOARD_PLATFORM)))
 BOARD_EQ_DIR := v2
 else
 BOARD_EQ_DIR := v1
@@ -39,7 +39,6 @@ LOCAL_SRC_FILES := \
 LOCAL_C_INCLUDES := \
 	external/tinyalsa/include \
 	$(LOCAL_PATH)/../ \
-	$(LOCAL_PATH)/../audio/nv_exchange \
 
 LOCAL_EXPORT_C_INCLUDE_DIRS := \
 	$(LOCAL_PATH) \
@@ -81,4 +80,3 @@ $(LOCAL_BUILT_MODULE):
 	$(hide) rm -rf $(SYMLINK)
 	$(hide) ln -sf $(VBC_EQ_FILE) $(SYMLINK)
 	$(hide) touch $@
-

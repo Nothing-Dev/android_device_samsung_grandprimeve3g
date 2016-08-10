@@ -72,7 +72,6 @@ int headset_no_mic()
                 ALOGW("Headset has mic");
             } else {
                 ALOGW("No Headset detect");
-                return 1;
             }
         }
     }
